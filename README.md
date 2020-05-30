@@ -11,3 +11,5 @@ php cloudf_dns.php mail_cua_ban@gmail.com API_Totken ten_mien.com
 php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.top
 
 ```
+## Tao: ``crontab -e`` để tạo lịch tự cập nhật
+
