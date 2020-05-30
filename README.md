@@ -23,9 +23,9 @@ nano -w /etc/rc.local
 ```
 - Nhập nội dung nhu sau:
 ```
-php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.com
+/usr/local/lsws/lsphp71/bin/php /root/cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.com
 
-php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 sangtao.top
+/usr/local/lsws/lsphp71/bin/php /root/cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 sangtao.top
 
 ```
 ## Tao: ``crontab -e`` để tạo lịch tự cập nhật
@@ -33,7 +33,7 @@ Ví dụ 30 phút cập nhật 1 lần:
 ```crontab -e```
 sau đó dùng lệnh nhập nội dung như sau:
 ```
-0,30 * * * * php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.top 
+0,30 * * * * /usr/local/lsws/lsphp71/bin/php /root/cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.top 
 ```
 Sau đó lưu lại.
 
