@@ -2,7 +2,7 @@
 Script giúp cập nhật IP của domain và nhiều subdomain trên cloudflare.com một cách tự động với cú pháp đơn giản.
 Cú pháp của script như sau:
 ```
-cfIP [-f] mydomain.com subdomain[,subdomain2...]
+Update_dns_Cloudflare [-f] mydomain.com subdomain[,subdomain2...]
     -f: xóa cache/buộc cập nhật
     subdomain: có thể là sub thay cho sub.mydomain.com, hay
     @: thay cho mydomain.com, hay
@@ -12,10 +12,10 @@ cfIP [-f] mydomain.com subdomain[,subdomain2...]
   
   Thí dụ
 ```
-cfIP mydomain.com @,\*        # Update IP cho mọi record A
-cfIP mydomain.com @,mail,mx   # Update IP cho @, subdomain mail và mx
-cfIP mydomain.com -f \*       # xóa cache và cập nhật cho mọi subdomain
-cfIP mydomain.com \*,-mx      # update mọi subdomain, trừ mx
+Update_dns_Cloudflare mydomain.com @,\*        # Update IP cho mọi record A
+Update_dns_Cloudflare mydomain.com @,mail,mx   # Update IP cho @, subdomain mail và mx
+Update_dns_Cloudflare mydomain.com -f \*       # xóa cache và cập nhật cho mọi subdomain
+Update_dns_Cloudflare mydomain.com \*,-mx      # update mọi subdomain, trừ mx
 ```
 Số lần gọi hàm API của cloudflare.com để cập nhật n record A là từ 0 đến n+2, so với cách gọi thông thường là từ 0 đến 2n+1, nghĩa là nhanh hơn và ít lần gọi hàm hơn khi n > 1.
 
