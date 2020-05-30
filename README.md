@@ -17,7 +17,7 @@ php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c3871
 /etc/rc.local chứa script để chạy tự động sau khi hệ thống boot xong.
 
 Thông thường khi toàn bộ các dịch vụ của hệ thống đã chạy, bạn muốn chạy một số lệnh tự động hoặc gọi script nào đó thì hãy thêm vào file /etc/rc.local
-Ví dụ:
+# Ví dụ:
 ``nano -w /etc/rc.local
 //nhập nội dung nhu sau
 php cloudf_dns.php votrunghantvbox@gmail.com 77c9f23b3fb4d3eeb15e5d2566f396c387135 muavaban.com
