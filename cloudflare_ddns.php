@@ -8,7 +8,7 @@ $cf = new updateCFDDNS($argv);
 $cf->makeUpdateDNS();
 
 /**
- * DDNS auto updater for CentOS
+ * DDNS auto updater for Synology NAS
  * Base on Cloudflare API v4
  * Supports multidomains and sundomains 
  */
@@ -22,17 +22,20 @@ class updateCFDDNS
         if (count($argv) != 4) {
             $this->badParam();
         }
-        $account = (string) $argv[1];
-        $apiKey = (string) $argv[2]; // CF Global API Key
+        $this->account = (string) $argv[1];
+        $this->apiKey = (string) $argv[2]; // CF Global API Key
         $hostname = (string) $argv[3]; // example: example.com.uk---sundomain.example1.com---example2.com
 		echo 'Dang lay IP hien tai...';
 		$ip_actuelle = file_get_contents('http://icanhazip.com');
 		// chuyen ve ip4
+		//$ip_actuelle = file_get_contents('http://checkip.dyndns.com/');
+        ///preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $ip_actuelle, $m); // neu dung trang 'http://checkip.dyndns.com/'
+		
 		preg_match('/\[?([:.0-9a-fA-F]+)\]?/', $ip_actuelle, $m);
 		$ip_actuelle = $m[1];
-		$ip = $ip_actuelle ;
+		$this->ip = $ip_actuelle ;
         
-        $this->validateIpV4($ip);
+        $this->validateIpV4($this->ip);
         echo 'IP la: '.$ip_actuelle.PHP_EOL;
 		echo '';
         if (file_get_contents(__DIR__.'/last.ip') == $ip_actuelle) {
