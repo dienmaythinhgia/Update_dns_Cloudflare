@@ -25,6 +25,7 @@ class updateCFDDNS
         $account = (string) $argv[1];
         $apiKey = (string) $argv[2]; // CF Global API Key
         $hostname = (string) $argv[3]; // example: example.com.uk---sundomain.example1.com---example2.com
+		echo 'Dang lay IP hien tai...';
 		$ip_actuelle = file_get_contents('http://icanhazip.com');
 		// chuyen ve ip4
 		preg_match('/\[?([:.0-9a-fA-F]+)\]?/', $ip_actuelle, $m);
@@ -32,7 +33,7 @@ class updateCFDDNS
 		$ip = $ip_actuelle ;
         
         $this->validateIpV4($ip);
-        echo 'IP hien tai la: '.$ip_actuelle.PHP_EOL;
+        echo 'IP la: '.$ip_actuelle.PHP_EOL;
 		echo '';
         if (file_get_contents(__DIR__.'/last.ip') == $ip_actuelle) {
 	         echo 'Ip khong thay doi, Khong can cap nhat';
