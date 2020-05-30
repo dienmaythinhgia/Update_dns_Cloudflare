@@ -1,4 +1,4 @@
-# Update_dns_Cloudflare
+## Update dns_Cloudflare
 php giúp cập nhật IP của domain trên cloudflare.com một cách tự động trên Centos với cú pháp đơn giản.
 Cú pháp của script như sau:
 ```
