@@ -1,6 +1,6 @@
 <?php
 
-if ($argc !== 5) {
+if ($argc !== 4) {
     echo 'badparam';
     exit();
 }
@@ -20,14 +20,18 @@ class updateCFDDNS
 
     function __construct($argv)
     {
-        if (count($argv) != 5) {
+        if (count($argv) != 4) {
             $this->badParam();
         }
-
         $this->account = (string) $argv[1];
         $this->apiKey = (string) $argv[2]; // CF Global API Key
         $hostname = (string) $argv[3]; // example: example.com.uk---sundomain.example1.com---example2.com
-        $this->ip = (string) $argv[4];
+		$ip_actuelle = file_get_contents('http://checkip.dyndns.com/');
+		// chuyen ve ip4
+		preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $ip_actuelle, $m);
+		$ip_actuelle = $m[1];
+		echo 'Your current IP address: '.$ip_actuelle.PHP_EOL;
+        $this->ip = (string) $ip_actuelle ;
 
         $this->validateIpV4($this->ip);
 
@@ -76,7 +80,9 @@ class updateCFDDNS
                 exit();
             }
         }
-        echo "good";
+		echo '';
+        echo 'IP address updated ok';
+		exit();
     }
 
     function badParam($msg = '')
