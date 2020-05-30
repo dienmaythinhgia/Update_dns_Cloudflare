@@ -8,7 +8,7 @@ $cf = new updateCFDDNS($argv);
 $cf->makeUpdateDNS();
 
 /**
- * DDNS auto updater for Synology NAS
+ * DDNS auto updater for CentOS
  * Base on Cloudflare API v4
  * Supports multidomains and sundomains 
  */
