@@ -4,8 +4,8 @@
 # © 2020 LNT <lnt@ly-le.info>
 # version 20200501
 #
-AUTH_EMAIL='votrunghatvbox@gmail.com'
-AUTH_KEY='74d3eeb15e5d6f37c9f23256b3fb96c387135'
+AUTH_EMAIL='email cua ban'
+AUTH_KEY='API totken cua ban'
 BASE_URL='https://api.cloudflare.com/client/v4/zones'
 GETWAN='http://icanhazip.com'
 # Shared Memory
