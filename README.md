@@ -1,5 +1,5 @@
 # Update_dns_Cloudflare
-php giúp cập nhật IP của domain và nhiều subdomain trên cloudflare.com một cách tự động trên centos với cú pháp đơn giản.
+php giúp cập nhật IP của domain trên cloudflare.com một cách tự động trên Centos với cú pháp đơn giản.
 Cú pháp của script như sau:
 ```
 php cloudf_dns.php mail_cua_ban@gmail.com API_Totken ten_mien.com
